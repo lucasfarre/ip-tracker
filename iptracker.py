@@ -10,9 +10,10 @@ from model.country import Country
 parser = argparse.ArgumentParser(description='IP Tracker. Track an IP and get information about the country of origin.')
 parser.add_argument('ip', metavar='ip', type=str, nargs=1, help='the IP to be tracked')
 args = parser.parse_args()
-ip = args.ip[0]
+ip = args.ip[0] # TODO: Verify that is a valid public IP
 
 # Get data from the APIs
+# TODO: Error handling of the responses
 print 'Tracking IP location...'
 country_code = IPToCountry().get_country_code_from_ip(ip)
 print 'Getting country data...'
