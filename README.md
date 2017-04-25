@@ -17,6 +17,22 @@ For help you can execute:
 python iptracker.py -h
 ```
 
+## How to run it with Docker?
+Clone the repo, open a terminal and navigate to the folder where is located the **Dockerfile** file:
+``` bash
+cd path_to_the_directory_where_is_the_dockerfile
+```
+
+Then build the iptracker image:
+``` bash
+docker build -t iptracker .
+```
+
+and finally run it:
+``` bash
+docker run -it --rm --name running-iptracker iptracker 194.69.254.120
+```
+
 ## Public APIs used
 [ip2country](https://ip2country.info/) for mapping an IP to a country.
 
