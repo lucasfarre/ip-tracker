@@ -15,7 +15,7 @@ ip = args.ip[0] # TODO: Verify that is a valid public IP
 # Get data from the APIs
 # TODO: Error handling of the responses
 print 'Tracking IP location...'
-country_basic_info = IPToCountry().get_country_code_from_ip(ip)
+country_basic_info = IPToCountry().get_country_basic_info_from_ip(ip)
 country_code = country_basic_info['countryCode']
 country_emoji = country_basic_info['countryEmoji']
 print 'Getting country data...'

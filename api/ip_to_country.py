@@ -3,9 +3,9 @@ import urllib2, json
 class IPToCountry:
     IP2COUNTRY_API_URL = 'https://api.ip2country.info/'
 
-    def get_country_code_from_ip(self, ip):
+    def get_country_basic_info_from_ip(self, ip):
         """
-        Returns the ISO country code for the given IP
+        Returns the ISO country codes, name and emoji for the given IP
         """
         request_url = IPToCountry.IP2COUNTRY_API_URL + 'ip?' + ip
         try:
