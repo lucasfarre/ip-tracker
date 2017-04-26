@@ -4,16 +4,17 @@ from util.fixed_time_zone_offset import FixedTimeZoneOffset
 from util.math_util import MathUtil
 
 class Country:
-    def __init__(self, code, name, languages, currency, timezones, location):
+    def __init__(self, code, name, emoji, languages, currency, timezones, location):
         self.code = code # ISO 2-alpha code e.g. 'ES'
+        self.emoji = emoji
         self.name = name # e.g. 'Spain'
         self.languages = languages # array of dicts e.g. [{'code': 'es', 'name': 'Spanish'}]
         self.currency = currency # dict e.g. {'code': 'EUR', 'rate_against_usd': 0.91819}
         self.timezones = timezones # array of strings e.g. ['UTC','UTC+01:00']
         self.location = location # dict e.g. {'lat': 40.0, 'lon': -4.0}
 
-    def print_name(self):
-        print('Country: ' + self.name)
+    def print_name_and_emoji(self):
+        print('Country: ' + self.name + ' ' + self.emoji)
 
     def print_code(self):
         print('ISO code: ' + self.code)
@@ -30,7 +31,7 @@ class Country:
         if self.currency['rate_against_usd'] != None:
             print('Currency: ' + self.currency['code'] + ' (1 ' + self.currency['code'] + ' = ' + str(self.currency['rate_against_usd']) + ' USD)')
         else:
-            print('Currency: ' + self.currency['code'] + ' (no rates data available)')
+            print('Currency: ' + self.currency['code'] + ' (no rate data available)')
 
     def print_time(self):
         sys.stdout.write('Time: ')

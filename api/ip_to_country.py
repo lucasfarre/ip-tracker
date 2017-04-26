@@ -10,8 +10,7 @@ class IPToCountry:
         request_url = IPToCountry.IP2COUNTRY_API_URL + 'ip?' + ip
         try:
             response = urllib2.urlopen(request_url)
-            ip_info = json.loads(response.read())
-            country_code = ip_info['countryCode']
-            return country_code
+            country_basic_info = json.loads(response.read())
+            return country_basic_info
         except urllib2.URLError as e:
             raise e

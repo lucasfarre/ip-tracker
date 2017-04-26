@@ -14,7 +14,7 @@ class ExchangeRates:
             currency_rates = json.loads(response.read())['rates']
             currency_rate = None
             if currency_code in currency_rates:
-                currency_rate = currency_rates[currency_code]
+                currency_rate = 1 / currency_rates[currency_code]
             return currency_rate
         except urllib2.URLError as e:
             raise e
